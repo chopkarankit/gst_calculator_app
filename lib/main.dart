@@ -174,31 +174,31 @@ class _GSTFormState extends State<GSTForm> {
         double igst = 0.0;
         double cgst = amount * 9 / 100;
         double sgst = amount * 9 / 100;
-        double totalgst = amount * gst / 100.0;
+        double totalgst = cgst + sgst;
         double totalamount = amount + totalgst;
 
         String result = "GST Interstate\n\n"
-            "IGST : $igst\n"
-            "CGST : $cgst\n"
-            "SGST : $sgst\n"
-            "TOTAL GST : $totalgst\n"
-            "Total AMOUNT : $totalamount\n";
+            "I.G.S.T :  $igst\n"
+            "C.G.S.T :  $cgst\n"
+            "S.G.S.T :  $sgst\n"
+            "Total G.S.T :  $totalgst\n"
+            "Total Amount :  $totalamount\n";
         return result;
         break;
 
       case 'intrastate':
-        double igst = amount * 18 / 100;
+        double igst = amount * 9 / 100;
         double cgst = 0.0;
         double sgst = amount * 9 / 100;
-        double totalgst = amount * gst / 100.0;
+        double totalgst = igst + sgst;
         double totalamount = amount + totalgst;
 
         String result1 = "GST Intrastate\n\n"
-            "IGST : $igst\n"
-            "CGST : $cgst\n"
-            "SGST : $sgst\n"
-            "TOTAL GST : $totalgst\n"
-            "Total AMOUNT : $totalamount\n";
+            "I.G.S.T :  $igst\n"
+            "C.G.S.T :  $cgst\n"
+            "S.G.S.T :  $sgst\n"
+            "Total G.S.T :  $totalgst\n"
+            "Total Amount :  $totalamount\n";
         return result1;
 
       default:
