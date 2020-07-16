@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void main() 
+{
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'Simple GST Calculator App',
@@ -12,14 +13,17 @@ void main() {
   ));
 }
 
-class GSTForm extends StatefulWidget {
+class GSTForm extends StatefulWidget 
+{
   @override
-  State<StatefulWidget> createState() {
+  State<StatefulWidget> createState() 
+  {
     return _GSTFormState();
   }
 }
 
-class _GSTFormState extends State<GSTForm> {
+class _GSTFormState extends State<GSTForm> 
+{
   var _formKey = GlobalKey<FormState>();
 
   var _gsttype = ['interstate', 'intrastate'];
@@ -36,7 +40,8 @@ class _GSTFormState extends State<GSTForm> {
   var displayResult1 = '';
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     TextStyle textStyle = Theme.of(context).textTheme.title;
 
     return Scaffold(
@@ -56,8 +61,10 @@ class _GSTFormState extends State<GSTForm> {
                       keyboardType: TextInputType.number,
                       style: textStyle,
                       controller: amountController,
-                      validator: (String value) {
-                        if (value.isEmpty) {
+                      validator: (String value) 
+                      {
+                        if (value.isEmpty) 
+                        {
                           return 'Please Enter The Amount';
                         }
                       },
@@ -91,7 +98,7 @@ class _GSTFormState extends State<GSTForm> {
                       children: <Widget>[
                         DropdownButton<String>(
                           style: textStyle,
-                          items: _gsttype.map((String value) {
+                          items: _gsttype.map((String value){
                             return DropdownMenuItem<String>(
                               value: value,
                               child: Text(value),
